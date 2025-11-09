@@ -12,29 +12,29 @@ A web server (like Apache) is a software program that delivers web pages to peop
 ## What are some different web server applications? Include definitions, project’s website/where to download it, which operating system is available for and its latest version.
 
 1.  **Apache HTTP Server**
-- ***Definition***: A widely-used open source web server known for its flexibility and extensive module support
-- Download: https://httpd.apache.org/download.cgi
-- **Operating Systems**: Linux, Windows, macOS
-- Latest Version: 1.29.2 (Released on October 7, 2025)
+    - ***Definition***: A widely-used open source web server known for its flexibility and extensive module support
+    - Download: https://httpd.apache.org/download.cgi
+    - **Operating Systems**: Linux, Windows, macOS
+    - Latest Version: 1.29.2 (Released on October 7, 2025)
 
 2. **NGINX**
-- ***Definition***:A high-performance web server and reverse proxy server designed for scalability and speed.
-- Download: https://nginx.org/en/download.html
-- ***Operating Systems***: Linux, Windows, macOS
-- Latest Version:1.29.2 (Released on October 7, 2025)
+   - ***Definition***:A high-performance web server and reverse proxy server designed for scalability and speed.
+   - Download: https://nginx.org/en/download.html
+   - ***Operating Systems***: Linux, Windows, macOS
+   - Latest Version:1.29.2 (Released on October 7, 2025)
 
 3. ***LiteSpeed Web Server***
-***Definition***: A commericial web server known for its speed and security features, often used in high-traffic environments.
-Download: https://www.litespeedtech.com/products/litespeed-web-server/download
-***Operating Systems***: Linux, macOS, Windows
-Latest Version:6.3.4 (Released on August 1, 2025)
+   - ***Definition***: A commericial web server known for its speed and security features, often used in high-traffic environments.
+   - Download: https://www.litespeedtech.com/products/litespeed-web-server/download
+   - ***Operating Systems***: Linux, macOS, Windows
+   - Latest Version:6.3.4 (Released on August 1, 2025)
 
 
 ## What is virtualization?
-Virtualization is the process of creating virtual versions of something, like a computer system, storage, or network, so that multiple operating systems can run on a single physical machine at the same time.
+- Virtualization is the process of creating virtual versions of something, like a computer system, storage, or network, so that multiple operating systems can run on a single physical machine at the same time.
 
 ## What is virtualbox?
-VirtualBox is a software program that lets you run virtual computers inside your real computer (host)
+- VirtualBox is a software program that lets you run virtual computers inside your real computer (host)
 
 - Think of VirtualBox like a special manager that divides the house(Your computer) into separate apartments( virtual machines),letting other operating systems like Linux or Windows live there at the same time.
 - Each virtual machines has its own CPU, Memory, and storage but it still share the resources of your real computer.
@@ -42,40 +42,39 @@ VirtualBox is a software program that lets you run virtual computers inside your
 
 ## What is a virtual machine?
 
-A virtual machine is a software based computer that runs inside physical computer. It can have its own operating system,files,programs, and settings but it exists only as software.
-- Virtual machine machine uses a piece of software called a ***hypervisor***(like VirtualBox) to share your(host) computer's physical resources like CPU, memory, and storage.
- - Even if it runs on the same hardware, each machine acts like a independent system.
- - Can run multiple VMs at once, and they wont interfere with each other.
- - Perfect for testing,learning, or running different operating systems with out changing host setups.
+- A virtual machine is a software based computer that runs inside physical computer. It can have its own operating system, files, programs, and settings but it exists only as software.
+  - Virtual machine machine uses a piece of software called a ***hypervisor*** (like VirtualBox) to share your (host)   computer's physical resources like CPU, memory, and storage.
+  - Even if it runs on the same hardware, each machine act  s like a independent system.
+  - Can run multiple VMs at once, and they wont interfere with each other.
+  - Perfect for testing,learning, or running different operating systems with out changing host setups.
 
 ## In the context of virtualization, what does host machine and guest machine mean?
 
-1. **Host Machine** 
+**Host Machine** 
    
- Host machine is the actual physical computer - the one that can physically be touched.
-- It runs the main operating system (Windows,macOs, Linux) and has the real hardware (CPU, Ram, stoage).
-- The job of host is to run the virtualization software (like VirtualBox) and share its resources with the virtual machines.
+Host machine is the actual physical computer - the one that can physically be touched.
+   - It runs the main operating system (Windows,macOs, Linux) and has the real hardware (CPU, Ram, stoage).
+   - The job of host is to run the virtualization software (like VirtualBox) and share its resources with the virtual machines.
 
-Example: 
-A windows laptop with VirtualBox installed. The laptop is the `host machine`
+- Example: 
+  - A windows laptop with VirtualBox installed. The laptop is the `host machine`
 
-The host provides parts of its memory,CPU, and disk space to any virtual computers(guests) created.
+The host provides parts of its memory, CPU, and disk space to any virtual computers (guests) created.
 ___
-2. **Guest Machine**
+**Guest Machine**
 
 The guest machine is the virtual computer that runs inside the host machine.
 
-- It acts just like a regular computer but is completely software-based.
-- Each guest machine can have its own operating system, settings, and programs, and it doesn't affect the host directly.
+  - It acts just like a regular computer but is completely software-based.
+  - Each guest machine can have its own operating system, settings, and programs, and it doesn't affect the host directly.
 
-Example: If created a Linux virtual machine inside VirtualBox on Windows computer. The Linux system is the `guest machine`
+- Example: If created a Linux virtual machine inside VirtualBox on Windows computer. The Linux system is the `guest machine`
 - The guest machine uses parts of the host's memory and storage to run, but it behaves  like a independent computer.
 
 
 
 ___
 ## What is Debian?
-
 Debian is a free and open source operating system that is based on the Linux Kernel.
 It's a type of Linux operating system, which means it's an alternative to Windows or macOS.
 - Debian is built and maintained by a large community of developers who work together to make it secure, reliable, and easy to update.
@@ -138,8 +137,9 @@ Port forwarding is a network feature that allows outside devices on the internet
 
 How it works? 
 - It works by forwarding (sending) data that comes into your router on a specific port number to a specific device (computer, game console, or server) inside your home network. 
-___
-- Port forwarding is commonly used when hosting a web server, game server, or a remote desktop connection and want other to connect to it from outside the home network.
+
+
+Port forwarding is commonly used when hosting a web server, game server, or a remote desktop connection and want other to connect to it from outside the home network.
 - Can think of it as telling the router where to send specific visitors based on which door (port number) they knock on.
 
 **For example**: 
