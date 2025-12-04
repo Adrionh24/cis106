@@ -1,6 +1,6 @@
-# Deliverable 1
+# Deliverable 1: Projects Requirements
 
-## Questions 
+### Questions 
 
 
 ## What is a web server? (In the context of software Ex. Apache)
@@ -193,4 +193,182 @@ If building a website and make a mistake in the code.Because you can save progre
 ## What is GitHub?
 
 GitHub is a website and cloud platform that helps people store,share, and collaborate on projects that use Git version control.
+
+---
+
+## Concepts I did not understand 
+### 1. **What are `systmd` and `systemctl`**
+
+ What is **`systemd`**?
+ - When a Linux computer turns on, something has to to:
+   - Start background programs (**web servers**, databases, etc)
+   - Keep them running
+   - Restart them if they crash
+
+  - That "something" is called an **init system**
+
+  -  `systemd` is the modern init system used by most Linux distributions,
+- **Example**: Think of `sytemd `as the manager of all backgrounds apps on your server.
+   - It decides what starts,when it starts and what happens if it fails.
+
+
+What is **`systemctl`**?
+
+**`systemctl`** is the command you use to talk to `systemd`
+
+- With **systemctl** you can:
+- - Start/stop/restart services (programs)
+
+- - Enable/disable them at boot
+
+- - Check their status
+
+- - See what’s running on the system
+
+- - Edit how services are defined 
+
+
+**Example**
+If **systemd** is the manager, systemctl is the remote control you use to give it orders.
+
+**Unit** = thing systemd manages (file ends in .service, .target, etc.).
+
+**Service unit** (something.service) = background program (web server, db, etc.).
+
+
+#### Basic service commands 
+`sudo systemctl start NAME.service` - **start now**
+`sudo systemctl stop NAME.service` - **stop now**
+`sudo systemctl restart NAME.service ` - **stop + start**
+`sudo systemctl reload NAME.service ` - **reload config (no restart)**
+`sudo systemctl reload-or-restart NAME.service`
+
+
+### Check service status
+
+`sudo systemctl status NAME.service` - detailed status + logs
+`systemctl is-active NAME.service` - active/inactive (exit 0 = active)
+`systemctl is-enabled NAME.service` - enabled/disabled
+`systemctl is-failed NAME.service` - failed/unknown/inactive (exit 0 = failed)
+
+#### Enable Boot/Disable at Boot
+`sudo systemctl enable Name.service` - start automatically at boot
+`sudo systemctl disable Name.service` - dont start at boot.
+
+
+  ### 2.  Understanding Virtual Machine Networking
+
+**VM** is like a house inside another house.
+
+Your real computer = the big house
+Your virtual machine = the small house inside it
+Networking modes = how the small house connects to the outside world
+
+Different network modes decide:
+
+- Can the VM access the internet?
+- Can you access the VM from your real computer?
+- Can other computers access the VM?
+- Can VMs talk to each other?
+
+
+The Different  Network Modes :
+
+1. **Not Attached**
+Definition:The VM has a network plug, but nothing is plugged in
+
+
+Example: Like having a Tv but no cable or Wifi hooked up 
+
+Result: VM cant access anything and nothing can access the VM
+
+
+2. **NAT (Network Address Translation)**
+
+Definition: The VM uses your real computer's internet like a kid using their parent's WiFi hotspot.
+
+Example: The VM is hiding behind your computer. It cant go out to the internet, but nobody from the outside can "see" it or reach it.
+
+
+Result: VM can access the internet, Other computers cannot access you VM, Good for safety,Bad for hosting a web server.
+
+3. **NAT (Network Address Translation)**
+
+**Defintion**: Similar to NAT, but multiple VMs can talk to each other too.
+
+**Example**: Think of it as a group of kids sharing one parent's hotspot.
+They can:
+
+- Use the internet
+- Talk to each other
+But outsiders still cannot talk to them.
+
+**Result:** 
+- VMs can talk to  the internet
+- VMS can talk to each other 
+- Outside world still cant reach them
+
+
+
+4. **Bridged Networking | *Most useful for running servers***|
+
+**Definition**: Your VM acts like a regular computer on your home network.
+
+**Example**:
+Your VM gets its own address on the network — like having its own phone number.
+Anyone in your house WiFi can call it.
+
+Result:
+
+Other computers can reach your VM
+
+VM behaves like a real machine
+
+Perfect for hosting a web server
+
+This is the easiest way to make the VM reachable from other devices.
+
+5. **Internal Network** - The VM can only talk to other VMs on the same "internal network.
+
+6. **Host-Only Network**
+A private network between:
+
+- your real computer (host)
+- the VM
+- No internet
+  Good for things that only need to talk to the host.
+
+
+7. **Cloud Networking**
+Lets your VM connect to a cloud service's network. Super niche,mostly for advanced setups.
+
+When running a virtual machine, it needs a way to connect to the internet or your home network
+
+Two main ways to connect it:
+
+1. Bridge Adapter (The easier way)
+- Can think of it like plugging the virtual machine directly into your router.
+- Your Vm gets it own IP address just like any normal computer or phone on your Wi-Fi.
+- It behaves like a separate physical computer on your home network.
+
+Why it's easy? 
+You literally just switch the network setting in virtualbox to bridge and boom.
+
+Some computers or routers don't allow this mode
+- Some network cards (hardware inside your laptop/PC) don't support bridging.
+- Some routers block it for security.
+
+If your router or network card won't allow it, the VM basically gets ignored or kicked off the network.
+
+
+2. NAT with Port Forwarding 
+- This is like your VM hides behind your actual computer when going online
+- Instead of having its own address, it uses your computer's internet connection.
+
+But if you want to access something inside the VM(like a website hosted on it), you have to set up "port forwarding."
+
+This kinda of like telling your computer:
+*If someone knocks on the front door asking for web traffic, send that traffic to the VM.*
+
+NAT works everywhere, but it's more steps to set up.
 
