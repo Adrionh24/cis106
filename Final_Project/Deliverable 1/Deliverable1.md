@@ -314,33 +314,29 @@ But outsiders still cannot talk to them.
 
 **Definition**: Your VM acts like a regular computer on your home network.
 
-**Example**:
-Your VM gets its own address on the network — like having its own phone number.
+
+**Example**: Your VM gets its own address on the network — like having its own phone number.
 Anyone in your house WiFi can call it.
 
-Result:
+Result: 
+- Other computers can reach your VM
 
-Other computers can reach your VM
+- VM behaves like a real machine
 
-VM behaves like a real machine
-
-Perfect for hosting a web server
+- Perfect for hosting a web server
 
 This is the easiest way to make the VM reachable from other devices.
 
 5. **Internal Network** - The VM can only talk to other VMs on the same "internal network.
 
-6. **Host-Only Network**
-A private network between:
-
+6. **Host-Only Network** - A private network between:
 - your real computer (host)
 - the VM
 - No internet
   Good for things that only need to talk to the host.
 
 
-7. **Cloud Networking**
-Lets your VM connect to a cloud service's network. Super niche,mostly for advanced setups.
+7. **Cloud Networking** - Lets your VM connect to a cloud service's network. Super niche,mostly for advanced setups.
 
 When running a virtual machine, it needs a way to connect to the internet or your home network
 
@@ -351,24 +347,16 @@ Two main ways to connect it:
 - Your Vm gets it own IP address just like any normal computer or phone on your Wi-Fi.
 - It behaves like a separate physical computer on your home network.
 
+
 Why it's easy? 
 You literally just switch the network setting in virtualbox to bridge and boom.
 
-Some computers or routers don't allow this mode
-- Some network cards (hardware inside your laptop/PC) don't support bridging.
-- Some routers block it for security.
-
-If your router or network card won't allow it, the VM basically gets ignored or kicked off the network.
+Some computers or routers don't allow this mode.Some network cards (hardware inside your laptop/PC) don't support bridging.Some routers block it for security.If your router or network card won't allow it, the VM basically gets ignored or kicked off the network.
 
 
 2. NAT with Port Forwarding 
 - This is like your VM hides behind your actual computer when going online
 - Instead of having its own address, it uses your computer's internet connection.
 
-But if you want to access something inside the VM(like a website hosted on it), you have to set up "port forwarding."
-
-This kinda of like telling your computer:
-*If someone knocks on the front door asking for web traffic, send that traffic to the VM.*
-
-NAT works everywhere, but it's more steps to set up.
+But if you want to access something inside the VM(like a website hosted on it), you have to set up "port forwarding."This kinda of like telling your computer, *If someone knocks on the front door asking for web traffic, send that traffic to the VM.*
 
