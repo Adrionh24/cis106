@@ -77,6 +77,35 @@ The **cut** command is used to extract a specific section of each line of a file
   - Display a list of all the users in your system with their login shell
     - `cut -d ':' -f1,7 /etc/passwd`
 
+Remember:
+cut grabs columns
+
+Fields start at 1 
+Must know what separates the fields(delimiter)
+
+Options -
+`-d` - delimiter (what separates fields)
+`-f` - field number(s)
+`--output-delimiter` - change separator in output
+
+More examples:
+
+`cut -d':  -f1 /etc/passwd`
+usersname only
+
+
+`cut -d':' -f1,7 /etc/passwd`
+username and login shell
+
+
+`cut -d' ' -f3,4 file.txt`
+fields 3 and 4 using space as delimiter
+
+
+
+`cut -d':' -f1,7 --output-delimiter=' -> ' /etc/passwd`
+change how output looks
+
 ## sort
 - ### Usage
 The **sort** command is used for sorting files. The sort command supports sorting: alphabetically, in reverse order, by number, and by month.
@@ -89,14 +118,38 @@ Lines starting with a lowercase will appear before lines starting with the same 
 - ### Formula
     - sort + option + file
 - ### Example
-    - Sort a file
+    - Sort a file in alphabetical order
       - `sort users.lst`
     - Sort a file in reverse order
       - `sort -r users.txt`
+    - Sort a file in numeric
+      - `sort -n [file]`
     - Check if a file is sorted 
       - `sort -c sorted.lst`
     - Sort and remove duplicate entries 
       - `sort -u users.lst`
+    - Sort by column 2 
+      - `sort -k2 file.txt`
+    - CSV file, sort by column 3
+      - `sort -t',' -k3 cereal.csv`
+    - Save sorted output to a new file
+      - `sort -o sorted.txt file.txt`
+    - To check if a file is already sorted
+      - `sort -c file.txt`
+
+
+* If I need it ordered - `sort`
+* If I need to save it - `-o`
+* Specific column? - `-k`
+
+Memory trick: 
+sort = order
+`k` = column
+
+`-t` = separator
+
+`-o` = output
+
 
 ## wc
 - ### Usage
@@ -107,6 +160,9 @@ The **wc** command is used for printing the number of lines,characters and bytes
   - Display the number of characters in a file
     - `wc -m users.txt`
   - Display the number of lines in a file
-    - wc -l users.txt
+    - `wc -l users.txt`
   - Display the number words in a file
-    - wc -w users.txt
+    - `wc -w users.txt`
+  - Count everything at once 
+    - `wc file.txt`
+      - Shows line,words, bytes
