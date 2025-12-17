@@ -1,0 +1,24 @@
+All files in my home directory
+access.log, assets, .bash_aliases, .bash_history, .bash_logout, .bashrc,
+.bastetrc, bball-site, .cache, cis106, colors, .config, Desktop, Documents,
+.dotnet, Downloads, essentials.sh, essentials.sh.1, .face, .face.icon,
+FinalExamStudyNotes, .fonts, .gitconfig, .gnupg, hah3, homework,
+inClassActivity, index.html, lab6-challenge1, lab6-challenge2, .local,
+Markdown Cheat sheet For CIS 106 Linux Fundamentals.png, marstenHouse,
+marstenhouse.sh, .mozilla, music, Music, pages, Pictures, .pki, portfolio,
+practicels, .profile, Public, scripts, snap, snapshots,
+sorted_access_log_by_endpoint.loclear, sorted_access_log_by_endpoint.log,
+sorted_access_log_by_uname.log, .ssh, .sudo_as_admin_successful, Templates,
+testscripts, touch, .vboxclient-clipboard-tty2-control.pid,
+.vboxclient-clipboard-tty2-service.pid,
+.vboxclient-draganddrop-tty2-control.pid,
+.vboxclient-hostversion-tty2-control.pid, .vboxclient-seamless-tty2-control.pid,
+.vboxclient-vmsvga-session-tty2-control.pid,
+.vboxclient-vmsvga-session-tty2-service.pid, Videos, .vscode, vscode.sh,
+vscode.sh.1, wallpapers, web, website, website_ch1_lab7, websiteclear,
+website.index.html, .wget-hsts, wildcardpractice,
+wildcards-in-class-activity-instructions.html
+Total number of files in my home directory
+31
+Total number of directories in my home directory
+43
